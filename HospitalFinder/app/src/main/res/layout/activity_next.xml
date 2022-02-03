@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#71C899"
+    tools:context=".next">
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="314dp"
+        android:layout_height="44dp"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="center"
+        android:text="Hosptial Finder Mobile Apps"
+        android:textColor="#2D3142"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.133" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="225dp"
+        android:layout_height="56dp"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="center"
+        android:text="Welcome!"
+        android:textColor="#2D3142"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.05" />
+
+
+    <TextView
+        android:id="@+id/tvname"
+        android:layout_width="358dp"
+        android:layout_height="37dp"
+        android:gravity="center"
+        android:text="Text Name"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.315" />
+
+    <TextView
+        android:id="@+id/tvemail"
+        android:layout_width="356dp"
+        android:layout_height="33dp"
+        android:gravity="center"
+        android:text="Text Email"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.472"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.404" />
+
+    <Button
+        android:id="@+id/signout"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        android:layout_width="316dp"
+        android:layout_height="59dp"
+        android:background="#CBEDDE"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Sign Out"
+        android:textColor="#2D3142"
+        android:textStyle="bold"
+        app:backgroundTint="#CBEDDE"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.918" />
+
+    <Button
+        android:id="@+id/btn3"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        android:layout_width="316dp"
+        android:layout_height="59dp"
+        android:background="#CBEDDE"
+        android:fontFamily="@font/poppins_medium"
+        android:text="About Us"
+        android:textColor="#2D3142"
+        android:textStyle="bold"
+        app:backgroundTint="#CBEDDE"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.809" />
+
+
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="316dp"
+        android:layout_height="59dp"
+        android:background="#CBEDDE"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Hospital Location"
+        android:textColor="#2D3142"
+        android:textStyle="bold"
+        app:backgroundTint="#CBEDDE"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.696" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
