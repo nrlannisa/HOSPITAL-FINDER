@@ -34,16 +34,16 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-        centerlocation = new LatLng(3.0,101);
+        centerlocation = new LatLng(3.0, 101);
 
         markerOptions = new Vector<>();
 
         markerOptions.add(new MarkerOptions().title("Hospital Nilai")
-                .position(new LatLng(2.81203,101.77309))
+                .position(new LatLng(2.81203, 101.77309))
                 .snippet("Open during MCO: 8am - 10pm")
         );
         markerOptions.add(new MarkerOptions().title("Hospital Putrajaya")
-                .position(new LatLng(2.92931,101.67418))
+                .position(new LatLng(2.92931, 101.67418))
                 .snippet("Open during MCO: 24 Hours")
         );
         markerOptions.add(new MarkerOptions().title("Hospital Jasin")
@@ -78,14 +78,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         //LatLng sydney = new LatLng(-34, 151);
         //mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
 
-        for (MarkerOptions mark: markerOptions) {
+        for (MarkerOptions mark : markerOptions) {
             mMap.addMarker(mark);
         }
 
         enableMyLocation();
 
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(centerlocation,8));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(centerlocation, 8));
     }
+
     /**
      * Enables the My Location layer if the fine location permission has been granted.
      */
@@ -98,7 +99,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         } else {
             String perms[] = {"android.permission.ACCESS_FINE_LOCATION"};
             // Permission to access the location is missing. Show rationale and request permission
-            ActivityCompat.requestPermissions(this, perms,200);
+            ActivityCompat.requestPermissions(this, perms, 200);
         }
     }
+}
 
