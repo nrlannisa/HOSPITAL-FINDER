@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     GoogleSignInOptions gso;
     GoogleSignInClient mGoogleSignInClient;
+    int RC_SIGN_IN;
 
 
     @Override
@@ -32,10 +33,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // Set the dimensions of the sign-in button.
         SignInButton signInButton = findViewById(R.id.sign_in_button);
         signInButton.setSize(SignInButton.SIZE_STANDARD);
-        signInButton.setOnClickListener(this);
+
+        findViewById(R.id.sign_in_button).setOnClickListener(this);
 
 
-        gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+
+        // Configure sign-in to request the user's ID, email address, and basic
+        // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
                 .build();
 
@@ -61,18 +66,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
-
+        switch (v.getId()) {
             case R.id.sign_in_button:
-
-                Intent signInIntent = mGoogleSignInClient.getSignInIntent();
-                startActivityForResult(signInIntent, 10);
+                signIn();
                 break;
-
-
+            // ...
         }
-
     }
+
+
+
+
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
@@ -84,7 +88,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             handleSignInResult(task);
         }
     }
-    private void handleSignInResult(Task<GoogleSignInAccount> completedTask) {
+
+    private void signIn() {
+        Intent signInIntent = mGoogleSignInClient.getSignInIntent();
+        startActivityForResult(signInIntent, RC_SIGN_IN);
+    }
+
+    /*private void handleSignInResult(Task<GoogleSignInAccount> completedTask) {
         try {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
 
@@ -99,6 +109,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
 
 
+        } catch (ApiException e) {
+            // The ApiException status code indicates the detailed failure reason.
+            // Please refer to the GoogleSignInStatusCodes class reference for more information.
+            Log.w("Oh no!", "signInResult:failed code=" + e.getStatusCode());
+
+            Toast.makeText(this,"Sorry cant sign in", Toast.LENGTH_SHORT).show();
+        }
+    */
+    private void handleSignInResult(Task<GoogleSignInAccount> completedTask) {
+        try {
+            GoogleSignInAccount account = completedTask.getResult(ApiException.class);
+
+            // Signed in successfully, show authenticated UI.
+            Intent intent = new Intent ( MainActivity.this, next.class);
+            startActivity (intent);
         } catch (ApiException e) {
             // The ApiException status code indicates the detailed failure reason.
             // Please refer to the GoogleSignInStatusCodes class reference for more information.
