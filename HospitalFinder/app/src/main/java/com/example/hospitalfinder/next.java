@@ -21,7 +21,7 @@ public class next extends AppCompatActivity implements View.OnClickListener{
 
     GoogleSignInClient mGoogleSignInClient;
     String name,email;
-    Button btn1,btn2,btn3;
+    Button btn1,btn2,btn3, btnCheckIn;
 
 
     @Override
@@ -57,6 +57,16 @@ public class next extends AppCompatActivity implements View.OnClickListener{
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.setClass(getApplicationContext(),about.class);
+                startActivity(intent);
+            }
+        });
+
+        btnCheckIn = (Button) findViewById(R.id.btnCheckIn);
+        btnCheckIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(getApplicationContext(),checkin.class);
                 startActivity(intent);
             }
         });
