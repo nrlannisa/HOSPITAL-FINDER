@@ -21,11 +21,43 @@ public class next extends AppCompatActivity {
     GoogleSignInClient gsc;
 
     TextView name, email;
-    Button btn1, btn2, btn3, signOutBtn;
+    Button btn1, btnCheckIn, btn3, signOutBtn;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        btn1 = (Button) findViewById(R.id.btn1);
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(getApplicationContext(),MapsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btn3 = (Button) findViewById(R.id.btn3);
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(getApplicationContext(),about.class);
+                startActivity(intent);
+            }
+        });
+
+        btnCheckIn = (Button) findViewById(R.id.btnCheckIn);
+        btnCheckIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(getApplicationContext(),checkin.class);
+                startActivity(intent);
+            }
+        });
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_next);
         name = findViewById(R.id.tvname);
