@@ -1,5 +1,4 @@
-package com.example.hospitalfinder;
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.hospital_finder;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +6,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -24,7 +25,7 @@ public class checkin extends AppCompatActivity {
 
     RequestQueue queue;
 
-    final String URL = "http://localhost/xampp/HospitalFinderApp/api.php";
+    final String URL = "http://192.168.1.9/comments/api.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +37,7 @@ public class checkin extends AppCompatActivity {
         etName = (EditText) findViewById(R.id.etName);
         etEmail = (EditText) findViewById(R.id.etEmail);
         etPhone = (EditText) findViewById(R.id.etPhone);
-        etNote =  (EditText) findViewById(R.id.etNote);
+        etNote = (EditText) findViewById(R.id.etNote);
 
         Button button = (Button) findViewById(R.id.submit);
 
@@ -55,7 +56,7 @@ public class checkin extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(getApplicationContext(),next.class);
+                intent.setClass(getApplicationContext(), next.class);
                 startActivity(intent);
             }
         });
@@ -67,13 +68,13 @@ public class checkin extends AppCompatActivity {
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                Toast.makeText(getApplicationContext(),response,Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), response, Toast.LENGTH_LONG).show();
 
             }
-        }, errorListener){
+        }, errorListener) {
             @Override
-            protected Map<String,String> getParams (){
-                Map <String, String> params = new HashMap<>();
+            protected Map<String, String> getParams() {
+                Map<String, String> params = new HashMap<>();
 
                 params.put("name", etName.getText().toString());
                 params.put("email", etEmail.getText().toString());
@@ -94,6 +95,4 @@ public class checkin extends AppCompatActivity {
 
         }
     };
-
-
 }

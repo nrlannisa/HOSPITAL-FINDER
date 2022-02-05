@@ -1,4 +1,4 @@
-package com.example.hospitalfinder;
+package com.example.hospital_finder;
 
 import org.junit.Test;
 

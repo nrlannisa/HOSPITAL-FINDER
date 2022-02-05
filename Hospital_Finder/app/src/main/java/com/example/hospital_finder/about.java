@@ -1,11 +1,10 @@
-package com.example.hospitalfinder;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.hospital_finder;
 
 import android.os.Bundle;
 
-public class about extends AppCompatActivity {
+import androidx.appcompat.app.AppCompatActivity;
 
+public class about extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
