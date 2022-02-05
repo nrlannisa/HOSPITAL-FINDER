@@ -1,5 +1,4 @@
 package com.example.hospitalfinder;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -25,7 +24,7 @@ public class checkin extends AppCompatActivity {
 
     RequestQueue queue;
 
-    final String URL = "http://192.168.1.9/comments/api.php";
+    final String URL = "http://localhost/xampp/HospitalFinderApp/api.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
