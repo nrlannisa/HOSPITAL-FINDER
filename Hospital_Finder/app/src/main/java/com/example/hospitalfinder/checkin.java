@@ -24,7 +24,7 @@ public class checkin extends AppCompatActivity {
 
     RequestQueue queue;
 
-    final String URL = "http://localhost/xampp/HospitalFinderApp/api.php";
+    final String URL = "http://192.168.0.155/xampp/hospitalfinder/api.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,7 +78,7 @@ public class checkin extends AppCompatActivity {
                 params.put("name", etName.getText().toString());
                 params.put("email", etEmail.getText().toString());
                 params.put("phone", etPhone.getText().toString());
-                params.put("note", etNote.getText().toString());
+                params.put("notes", etNote.getText().toString());
 
                 return params;
             }
