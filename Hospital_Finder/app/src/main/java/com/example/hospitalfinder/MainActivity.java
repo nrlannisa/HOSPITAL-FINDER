@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         googleBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 signIn();
             }
         });
@@ -56,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     void navigateTonext(){
-        finish();
+        //finish();
         Intent intent = new Intent(MainActivity.this,next.class);
         startActivity(intent);
 

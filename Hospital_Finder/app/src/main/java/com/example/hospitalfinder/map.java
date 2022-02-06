@@ -1,21 +1,25 @@
 package com.example.hospitalfinder;
-
+import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
+
+import android.Manifest;
+import android.app.Activity;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-import androidx.core.app.ActivityCompat;
-import android.Manifest;
-import android.content.pm.PackageManager;
 
 import java.util.Vector;
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
-{
+
+public class map extends FragmentActivity implements OnMapReadyCallback {
+
     private GoogleMap mMap;
     MarkerOptions marker;
     LatLng centerlocation;
@@ -35,7 +39,19 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         markerOptions = new Vector<>();
 
-        markerOptions.add(new MarkerOptions().title("Hospital Nilai")
+        markerOptions.add(new MarkerOptions().title("Klinik Nazam")
+                .position(new LatLng(2.82682,101.72994))
+                .snippet("Open during MCO: 8am - 9pm")
+        );
+        markerOptions.add(new MarkerOptions().title("Mediklinik Syifa")
+                .position(new LatLng(2.82891,101.73118))
+                .snippet("Open during MCO: 8am - 9pm")
+        );
+        markerOptions.add(new MarkerOptions().title("Klinik Siti")
+                .position(new LatLng(2.81862,101.69415))
+                .snippet("Open during MCO: 8am - 9.30pm")
+        );
+        markerOptions.add(new MarkerOptions().title("Nilai Medical Center")
                 .position(new LatLng(2.81203,101.77309))
                 .snippet("Open during MCO: 8am - 10pm")
         );
@@ -43,18 +59,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .position(new LatLng(2.92931,101.67418))
                 .snippet("Open during MCO: 24 Hours")
         );
-        markerOptions.add(new MarkerOptions().title("Hospital Jasin")
-                .position(new LatLng(2.3625, 102.4531))
-                .snippet("Open during MCO: 8am - 6pm")
-        );
-        markerOptions.add(new MarkerOptions().title("Hospital Alor Gajah")
-                .position(new LatLng(5.29, 100.259))
-                .snippet("Open during MCO: 8am - 6pm")
-        );
-        markerOptions.add(new MarkerOptions().title("Hospital Bandaraya Melaka")
-                .position(new LatLng(4.61, 101.88))
-                .snippet("Open during MCO: 8am - 6pm")
-        );
+
 
     }
 

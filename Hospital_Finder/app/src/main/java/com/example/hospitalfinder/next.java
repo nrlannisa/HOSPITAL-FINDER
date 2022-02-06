@@ -25,39 +25,8 @@ public class next extends AppCompatActivity {
     Button btn1, btnCheckIn, btn3, signOutBtn;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-        btn1 = (Button) findViewById(R.id.btn1);
-        btn1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClass(getApplicationContext(),MapsActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        btn3 = (Button) findViewById(R.id.btn3);
-        btn3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClass(getApplicationContext(),about.class);
-                startActivity(intent);
-            }
-        });
-
-        btnCheckIn = (Button) findViewById(R.id.btnCheckIn);
-        btnCheckIn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClass(getApplicationContext(),checkin.class);
-                startActivity(intent);
-            }
-        });
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_next);
@@ -82,7 +51,37 @@ public class next extends AppCompatActivity {
             }
         });
 
+        btn1 = (Button) findViewById(R.id.btn1);
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(getApplicationContext(), MapsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btn3 = (Button) findViewById(R.id.btn3);
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(getApplicationContext(), about.class);
+                startActivity(intent);
+            }
+        });
+
+        btnCheckIn = (Button) findViewById(R.id.btnCheckIn);
+        btnCheckIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(getApplicationContext(), checkin.class);
+                startActivity(intent);
+            }
+        });
     }
+
 
     void signOut() {
         gsc.signOut().addOnCompleteListener(new OnCompleteListener<Void>() {
