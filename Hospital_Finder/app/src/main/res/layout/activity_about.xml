@@ -100,7 +100,7 @@
         android:layout_height="111dp"
         android:gravity="center"
         android:autoLink="web"
-        android:text="Click the link here to watch our video presentation: https://www.youtube.com"
+        android:text="Click the link here to visit our Github : https://github.com/nrlannisa/HOSPITAL-FINDER "
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
